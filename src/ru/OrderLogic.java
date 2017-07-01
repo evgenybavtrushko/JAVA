@@ -7,7 +7,7 @@ public class OrderLogic {
 
     public void doOrder(){
         // какае-то логика
-        System.out.println("Заказ оформлен!");
+        System.out.println("Заказ оформлен!!!!");
         // логируем инфо
         log.info("Это информационное сообщение!!!!");
         addToCart();
