@@ -5,30 +5,31 @@ package com.lectures.lecture9;
  */
 public class Fifty {
     public static void main(String[] args) {
-        int[] array = new int[100];
-        int i = 0;
-        try {
-            fifty();
-        } catch (ArithmeticException ex) {
-            i++;
-            System.out.println("Деление на ноль" + i);
-        }
-        finally {
-
-        }
+        fifty();
     }
-    public static void fifty() throws ArithmeticException {
+
+    public static void fifty() {
         int x = 0;
+        int y = 0;
         int[] array = new int[100];
-        for (int i : array) {
+        for (int i = 0; i < array.length; i++) {
             if (i % 2 == 0) {
                 array[i] = 5;
             }
         }
-        for (int i:array) {
-          x = 89 /array[i];
+        for (int i = 0; i < array.length; i++) {
+            try {
+                x = 89 / array[i];
+            } catch (ArithmeticException ex) {
+                y++;
+                System.out.println("Деление на ноль  " + y);
 
+            } finally {
+                System.out.println("jhhh");
+
+                }
+
+            }
         }
-        System.out.println(array[3]);
     }
-}
+
