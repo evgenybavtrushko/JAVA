@@ -17,10 +17,10 @@ public class OneOfThree {
     }
 
     private static void oneOfThree() throws IllegalAccessException, IOException, ClassNotFoundException {
-        int x = (int) (Math.random() * 15);
-        if (x < 4) {
-            throw new IllegalAccessException("dff");
-        } else if (x < 8) {
+        int x = (int) (Math.random() * 10);
+        if (x <= 0) {
+            throw new IllegalAccessException("Не коректная ширина" + x);
+        } else if (x < 5) {
             throw new IOException();
         } else {
             throw new ClassNotFoundException();
