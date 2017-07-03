@@ -6,6 +6,7 @@ import com.lectures.lecture6.figures.Interfaces.GetPerimeterAndArea;
 /**
  * Created by User on 029 29.06.17.
  */
+
 public class Circle extends Figure implements GetPerimeterAndArea {
 
     private static String name = "Окружность";

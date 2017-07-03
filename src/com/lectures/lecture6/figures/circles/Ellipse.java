@@ -3,6 +3,7 @@ package com.lectures.lecture6.figures.circles;
 /**
  * Created by User on 029 29.06.17.
  */
+@Deprecated
 public class Ellipse extends Circle {
 
     public static String getName() {
@@ -10,7 +11,7 @@ public class Ellipse extends Circle {
     }
 
     private static String name = "Элипс";
-
+@Deprecated
     private int radiusMin;
 
     public Ellipse(int radius, int radiusMin) {
