@@ -3,23 +3,34 @@ package com.lectures.lecture7;
 /**
  * Created by User on 030 30.06.17.
  */
-public abstract class Calculator {
-    public static <Number> double multiplication(double x, double y) {
-        return x * y;
+/*public  class Calculator <Number> {
+    public static void main(String[] args) {
+        Calculator <Integer> calculator = new Calculator<>(10,78);
+        System.out.println(calculator.multiplication(calculator));
+    }
+    private Number value;
+    private Number value2;
+
+    public <Number> Calculator(Number value, Number value2) {
+        this.value = (Number) value;
+        this.value2 = value2;
+    }
+    public Number multiplication(Calculator calculator) {
+        return value * value2;
     }
 
-    public static <Number> double division(double x, double y) {
-        return x / y;
+    public T division(T value, T value2) {
+        return value * value2;
 
     }
 
-    public static <Number> double addition(double x, double y) {
-        return x + y;
+    public static <T> double addition(T value, T value2) {
+        return value * value2;
 
     }
 
-    public static <Number> double difference(double x, double y) {
-        return x - y;
+    public static <T> double difference(T value, T value2) {
+        return value * value2;
     }
 }
 
@@ -35,3 +46,4 @@ class Test {
 //multiplication multiplication addition difference
 
 
+*/

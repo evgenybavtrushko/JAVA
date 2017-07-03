@@ -11,14 +11,14 @@ public class Ellipse extends Circle {
     }
 
     private static String name = "Элипс";
-@Deprecated
+
     private int radiusMin;
 
     public Ellipse(int radius, int radiusMin) {
         super(radius);
         this.radiusMin = radiusMin;
     }
-
+@Deprecated
     @Override
     public double getPerimeter() {
         return 4 * (Math.PI * getRadius() * radiusMin + (getRadius() - radiusMin) * (getRadius() - radiusMin)) / (radiusMin + getRadius());
