@@ -13,7 +13,7 @@ public class ListOfRatings {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < 300000; i++) {
+        for (int i = 0; i < 30; i++) {
             list.add((int) (Math.random() * 11));
         }
         System.out.println(list);
