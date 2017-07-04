@@ -1,20 +1,21 @@
 package com.lectures.lecture7;
 
+import java.math.BigDecimal;
+
 /**
  * Created by User on 030 30.06.17.
  */
-/*public  class Calculator <Number> {
-    public static void main(String[] args) {
-        Calculator <Integer> calculator = new Calculator<>(10,78);
-        System.out.println(calculator.multiplication(calculator));
-    }
-    private Number value;
-    private Number value2;
+public  class Calculator <T , V> {
+    private BigDecimal a;
+    private BigDecimal b;
 
-    public <Number> Calculator(Number value, Number value2) {
-        this.value = (Number) value;
-        this.value2 = value2;
+    public Calculator(T a, V b) {
+        this.a = new BigDecimal(a.toString());
+        this.b = new BigDecimal(b.toString());
     }
+}
+
+   /* }
     public Number multiplication(Calculator calculator) {
         return value * value2;
     }
@@ -45,5 +46,7 @@ class Test {
 
 //multiplication multiplication addition difference
 
-
-*/
+    public static void main(String[] args) {
+        Calculator <Integer> calculator = new Calculator<>(10,78);
+        System.out.println(calculator.multiplication(calculator));
+    }*/

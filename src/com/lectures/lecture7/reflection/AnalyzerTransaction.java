@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
  */
 public abstract class AnalyzerTransaction {
     public static void main(String[] args) {
+
         Test2 test2 = new Test2();
         AnalyzerTransaction.transaction(test2);
     }

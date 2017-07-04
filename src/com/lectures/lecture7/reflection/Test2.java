@@ -9,10 +9,12 @@ public class Test2 {
     }
 @Transaction
 public static void tran(){
+    System.out.println("Transaction is started");
 
 }
 @Transaction
 private double tran2() {
+    System.out.println("Transaction is ended");
 return 5;
 }
 @Deprecated
