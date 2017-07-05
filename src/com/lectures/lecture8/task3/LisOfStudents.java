@@ -10,7 +10,9 @@ import java.util.TreeSet;
  */
 public class LisOfStudents {
     public static void main(String[] args) {
+
         NavigableSet<String> lisOfStudents = new TreeSet<>();
+
         lisOfStudents.add("Faraday");
         lisOfStudents.add("Tesla");
         lisOfStudents.add("Einstein");
@@ -19,6 +21,7 @@ public class LisOfStudents {
         lisOfStudents.add("Curie");
         lisOfStudents.add("Edison");
         lisOfStudents.add("Mendeleev");
+
         System.out.println(lisOfStudents);
         System.out.println(lisOfStudents.descendingSet());
     }

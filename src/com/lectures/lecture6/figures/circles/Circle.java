@@ -6,9 +6,9 @@ import com.lectures.lecture6.figures.Interfaces.GetPerimeterAndArea;
 /**
  * Created by User on 029 29.06.17.
  */
-
+@Deprecated
 public class Circle extends Figure implements GetPerimeterAndArea {
-
+@Deprecated
     private static String name = "Окружность";
     private int radius;
 
@@ -20,7 +20,7 @@ public class Circle extends Figure implements GetPerimeterAndArea {
 
         this.radius = radius;
     }
-
+@Deprecated
     @Override
     public double getPerimeter() {
         return Math.PI * 2 * radius;
