@@ -1,17 +1,14 @@
 package com.lectures.lecture8.task3;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * Created by nimf8 on 04.07.2017.
  */
 public class ListOfStudentsThree {
     public static void main(String[] args) {
-        List<String> lisOfStudents = new ArrayList<>();
-        List<String> lisOfStudents2 = new ArrayList<>();
+        List<String> lisOfStudents = new ArrayList<>(10);
+        List<String> lisOfStudents2 = new ArrayList<>(10);
 
         lisOfStudents.add("Faraday");
         lisOfStudents.add("Tesla");

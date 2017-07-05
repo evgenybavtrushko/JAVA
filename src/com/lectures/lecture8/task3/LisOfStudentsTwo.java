@@ -8,8 +8,8 @@ import java.util.*;
 public class LisOfStudentsTwo {
     public static void main(String[] args) {
 
-        List<String> lisOfStudents = new ArrayList<>();
-        List<String> lisOfStudents2 = new ArrayList<>();
+        List<String> lisOfStudents = new ArrayList<>(10);
+        List<String> lisOfStudents2 = new ArrayList<>(10);
 
         lisOfStudents.add("Faraday");
         lisOfStudents.add("Tesla");
@@ -19,7 +19,7 @@ public class LisOfStudentsTwo {
         lisOfStudents.add("Curie");
         lisOfStudents.add("Edison");
         lisOfStudents.add("Mendeleev");
-
+//lisOfStudents.sort(new Comparator );
         ListIterator<String> listIterator = lisOfStudents.listIterator();
         while (listIterator.hasNext()) {
             listIterator.next();
