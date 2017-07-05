@@ -10,7 +10,7 @@ import java.util.ListIterator;
  */
 
 public class ListOfRatings {
-    public static void main(String[] args) {
+    public static void main() {
         long startTime = System.currentTimeMillis();
         List<Integer> list = new LinkedList<>();
         for (int i = 0; i < 30; i++) {

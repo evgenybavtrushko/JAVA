@@ -6,7 +6,7 @@ import java.util.*;
  * Created by User on 004 04.07.17.
  */
 public class LisOfStudentsTwo {
-    public static void main(String[] args) {
+    public static void main() {
 
         List<String> lisOfStudents = new ArrayList<>(10);
         List<String> lisOfStudents2 = new ArrayList<>(10);

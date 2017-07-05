@@ -6,7 +6,7 @@ import com.lectures.lecture7.task1.Pair;
  * Created by User on 030 30.06.17.
  */
 public final class PairUtil {
-    public static void main(String[] args) {
+    public static void main() {
         Pair pair = new Pair(10, "ff");
         System.out.print(pair.val + "  ");
         System.out.println(pair.val2);

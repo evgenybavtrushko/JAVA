@@ -8,8 +8,8 @@ import java.util.ListIterator;
 /**
  * Created by User on 004 04.07.17.
  */
-public class ListOfRatingsTwo {
-    public static void main(String[] args) {
+public class  ListOfRatingsTwo {
+    public static void main() {
         Integer highestGrade = 0;
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
