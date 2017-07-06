@@ -11,11 +11,11 @@ import com.lectures.lecture8.task3.ListOfStudentsThree;
  */
 public class Runner {
     public static void main(String[] args) {
-        ListOfRatings.main();
-        ListOfRatingsTwo.main();
-        LisOfStudents.main();
-        LisOfStudentsTwo.main();
-        ListOfStudentsThree.main();
+    //    ListOfRatings.main();
+    //    ListOfRatingsTwo.main();
+  //      LisOfStudents.main();
+  //      LisOfStudentsTwo.main();
+  //      ListOfStudentsThree.main();
 
     }
 }
