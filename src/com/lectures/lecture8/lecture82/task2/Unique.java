@@ -6,9 +6,9 @@ import java.util.TreeMap;
 /**
  * Created by User on 007 07.07.17.
  */
-/*public class Unique {
-    public boolean isUnique(Map <String, String> map){
-
+public class Unique {
+    public boolean isUnique(Map <String, String> map) {
+        return true;
     }
     public static void main(String[] args) {
         String text = "кот собака слон кот тигр лев собака кот лев кот лев собака слон кот тигр лев собака кот";
@@ -20,4 +20,3 @@ import java.util.TreeMap;
         System.out.println(animals.values());
     }
 }
-*/
