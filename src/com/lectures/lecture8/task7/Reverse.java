@@ -1,7 +1,6 @@
 package com.lectures.lecture8.task7;
 
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 

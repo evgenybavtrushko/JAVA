@@ -8,16 +8,17 @@ import java.util.*;
 public class FrequencyDictionary {
     public static void main(String[] args) {
         String text = "кот собака слон кот тигр лев собака кот лев кот лев собака слон кот тигр лев собака кот";
-        String[] animal = (text + " ").split(" ");
+        String[] animal = text.split(" ");
         Map<String, Integer> animals = new TreeMap<>();
         for (String i : animal) {
             animals.merge(i, 1, (a, b) -> a + b);
         }
-        for (String i : animals.keySet()) {
-            System.out.println(i + " " + animals.get(i));
-        }
+        System.out.println(animals.entrySet());
+
     }
 }
+
+
 
 
 //           if (animal.get(i) == null) {
@@ -25,3 +26,6 @@ public class FrequencyDictionary {
 //           } else {
 //               animal.put(i, animal.get(i) + 1);
 //           }
+//  for (String i : animals.keySet()) {
+//       System.out.println(i + " " + animals.get(i));
+//   }
