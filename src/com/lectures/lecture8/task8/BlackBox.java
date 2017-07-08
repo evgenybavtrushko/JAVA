@@ -1,53 +1,50 @@
 package com.lectures.lecture8.task8;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
+import java.util.Iterator;
+import java.util.TreeSet;
 
 /**
  * Created by User on 006 06.07.17.
  */
-public class BlackBox extends LinkedHashSet {
-    Integer k = 0;
-
-    public BlackBox() {
-    }
-    @Override
-    public boolean add(Object o) {
-        if(super.add(o)){
-            k++;
+public class BlackBox <Integer> extends TreeSet {
+    public Integer min(int k) {
+        Integer x = null;
+        if (k > this.size()) {
+            System.out.print("Такого числа нет ");
+            return null;
+        } else {
+            Iterator<Integer> iterator = this.iterator();
+            for (int i = 0; i < k ; i++) {
+                x = iterator.next();
+            }
+            return x;
         }
-        return super.add(o);
     }
+    public Integer max(int k){
+        Integer x = null;
+        if (k > this.size()) {
+            System.out.println("Такого числа нет ");
+            return null;
+        } else {
+            Iterator<Integer> iterator = this.iterator();
+            for (int i = 0; i < this.size()-k+1 ; i++) {
+                x = iterator.next();
+            }
+            return x;
+        }
 
-    @Override
-    public boolean addAll(Collection c) {
-        return super.addAll(c);
     }
-
-    @Override
-    public String toString() {
-        return "BlackBox{" +
-                "k=" + k +
-                "} " + super.toString();
-    }
- //   public int der(){
-
-  //  }
 
     public static void main(String[] args) {
-       BlackBox blackBox = new BlackBox();
-       blackBox.add(1);
-       blackBox.add(2);
-       blackBox.add(3);
-       blackBox.add(4);
-       blackBox.add(5);
-       blackBox.add(6);
-       BlackBox blackBox1 = new BlackBox();
-       blackBox1.addAll(blackBox);
-       blackBox1.add(2);
-       System.out.println(blackBox);
-       System.out.println(blackBox1);
-
-
+        BlackBox  blackBox = new BlackBox();
+        for (int i = 0; i < 10; i++) {
+            blackBox.add((int) (Math.random() * 20));
+        }
+        System.out.println(blackBox);
+        System.out.println(blackBox.min(10));
+        System.out.println(blackBox.max(2));
     }
 }
+
+
+
