@@ -6,7 +6,7 @@ import java.util.*;
  * Created by nimf8 on 05.07.2017.
  */
 public class FrequencyDictionary {
-    public static void main(String[] args) {
+    public static void main() {
         String text = "кот собака слон кот тигр лев собака кот лев кот лев собака слон кот тигр лев собака кот";
         String[] animal = text.split(" ");
         Map<String, Integer> animals = new TreeMap<>();
@@ -17,8 +17,6 @@ public class FrequencyDictionary {
 
     }
 }
-
-
 
 
 //           if (animal.get(i) == null) {

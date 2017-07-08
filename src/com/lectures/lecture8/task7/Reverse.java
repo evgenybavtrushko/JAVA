@@ -8,7 +8,7 @@ import java.util.List;
  * Created by User on 006 06.07.17.
  */
 public class Reverse {
-    public static void main(String[] args) {
+    public static void main() {
         List<Integer> list = new LinkedList<>();
         while (list.size() != 10) {
             list.add((int) ((Math.random() * 20) - 10));

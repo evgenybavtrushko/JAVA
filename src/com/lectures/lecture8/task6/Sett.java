@@ -7,7 +7,7 @@ import java.util.TreeSet;
  * Created by nimf8 on 7/7/2017.
  */
 public class Sett {
-    public static void main(String[] args) {
+    public static void main() {
         Set<Integer> set1 = new TreeSet<>();
         Set<Integer> set2 = new TreeSet<>();
 

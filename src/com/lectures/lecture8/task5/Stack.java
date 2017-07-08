@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by User on 006 06.07.17.
  */
 public class Stack {
-    public static void main(String[] args) {
+    public static void main() {
         //       Scanner scanner = new Scanner(System.in);
         //       Integer x = scanner.nextInt();
         int x = 123456;

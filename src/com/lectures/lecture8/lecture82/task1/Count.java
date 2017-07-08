@@ -7,11 +7,12 @@ import java.util.*;
  */
 public class Count {
     public static int countUnique(List list) {
-        Set <List> set = new HashSet<>(list);
-        return list.size()- set.size();
+        Set<List> set = new HashSet<>(list);
+        return list.size() - set.size();
     }
-    public static void main(String[] args) {
-        List <Integer>list1 = new LinkedList<>();
+
+    public static void main() {
+        List<Integer> list1 = new LinkedList<>();
         List<Integer> list = new LinkedList<>();
         for (int i = 0; i < 10; i++) {
             list.add((int) (Math.random() * 6));
