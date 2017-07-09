@@ -4,7 +4,7 @@ package com.lectures.lecture10.task1;
  * Created by User on 008 08.07.17.
  */
 public class AdditionOfLines {
-    public static void main(String[] args) {
+    public static void main() {
         String f = "";
         String s = "";
         long startTime = System.currentTimeMillis();
