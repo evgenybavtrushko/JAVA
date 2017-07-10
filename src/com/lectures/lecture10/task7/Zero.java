@@ -33,8 +33,23 @@ public class Zero {
 
 
     public static void main() {
-        System.out.println(replaceEnd(123));
-        System.out.println(sub(2522));
-        System.out.println(deleteStart(101));
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++) {
+            replaceEnd(1);
+        }
+        long timeSpent = System.currentTimeMillis();
+
+        long startTime2 = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++) {
+            sub(1);
+        }
+        long timeSpent2 = System.currentTimeMillis();
+
+        long startTime3 = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++) {
+            deleteStart(1);
+        }
+        long timeSpent3 = System.currentTimeMillis();
+        System.out.println("1  " + (timeSpent - startTime) + "\n2  " + (timeSpent2 - startTime2) + "\n3  " + (timeSpent3 - startTime3));
     }
 }
