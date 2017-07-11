@@ -12,11 +12,11 @@ import java.util.Scanner;
  */
 public class FrequencyDictionaryTwo {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("text");
+        File file = new File("Text");
         Scanner scanner = new Scanner(file);
         String text = scanner.nextLine();
         System.out.println(text);
-        //  String text = "кот собака слон кот тигр лев собака кот лев кот лев.";
+        //  String Text = "кот собака слон кот тигр лев собака кот лев кот лев.";
         String[] parts = (text + " ").split("\\p{P}?[ \\t\\n\\r]+");
         Map<String, Integer> animal = new HashMap<>();
         for (String i : parts) {
