@@ -1,18 +1,17 @@
-package com.lectures.lecture11.task2;
+package com.lectures.lecture11.task3;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by User on 011 11.07.17.
+ * Created by nimf8 on 7/13/2017.
  */
-public class Vowels {
+public class LastFirst {
     public static void main(String[] args) {
         File file = new File("Text");
         String line;
         String str = "";
-        char[] vowels = {'а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е'};
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             while ((line = reader.readLine()) != null) {
                 str = str + " " + line;
@@ -23,17 +22,15 @@ public class Vowels {
             System.out.println("Ошибка ввода выводы");
         }
         String[] strings = str.toLowerCase().split(" ");
-        List stringVowels = new ArrayList();
-        for (int i = 1; i < strings.length; i++) {
-            for (int j = 0; j < vowels.length; j++) {
-                if (strings[i].charAt(0) == vowels[j]) {
-                    stringVowels.add(strings[i]);
-                }
+        List list = new ArrayList();
+        for (int i = 1; i < strings.length - 1; i++) {
+            if (strings[i].charAt(strings[i].length()-1) == strings[i + 1].charAt(0)) {
+                list.add(strings[i]);
+                list.add(strings[i +1]);
             }
         }
-        System.out.println(stringVowels);
+        System.out.println(list);
     }
 }
-
 
 
