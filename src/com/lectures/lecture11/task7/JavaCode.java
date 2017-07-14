@@ -1,7 +1,8 @@
-package com.lectures.lecture11;
+package com.lectures.lecture11.task7;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class JavaCode {
         String s;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("D:\\Projects java\\src\\com\\lectures\\lecture6\\figures\\circles\\circle.java"))) {
             while ((s = bufferedReader.readLine()) != null) {
-                list.add(s);
+                list.add("\n" + s);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,6 +23,14 @@ public class JavaCode {
         for (int i = 0; i < list.size(); i++) {
             StringBuilder stringBuilder = new StringBuilder((String) list.get(i));
             list2.add(stringBuilder.reverse());
+        }
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("text3"))) {
+            Iterator iterator = list2.iterator();
+            while (iterator.hasNext()) {
+                bufferedWriter.write(String.valueOf(iterator.next()));
+            }
+        } catch (IOException ex) {
+            System.out.println("cc");
         }
         System.out.println(list);
         System.out.println(list2);
