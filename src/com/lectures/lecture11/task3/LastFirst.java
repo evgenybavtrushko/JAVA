@@ -11,19 +11,19 @@ public class LastFirst {
     public static void main(String[] args) {
         File file = new File("Text");
         String line;
-        String str = "";
+        StringBuilder stringBuilder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             while ((line = reader.readLine()) != null) {
-                str = str + " " + line;
+                stringBuilder.append(line);
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не существует");
         } catch (IOException e) {
             System.out.println("Ошибка ввода выводы");
         }
-        String[] strings = str.toLowerCase().split(" ");
+        String[] strings = stringBuilder.toString().toLowerCase().split(" ");
         List list = new ArrayList();
-        for (int i = 1; i < strings.length - 1; i++) {
+        for (int i = 0; i < strings.length - 1; i++) {
             if (strings[i].charAt(strings[i].length()-1) == strings[i + 1].charAt(0)) {
                 list.add(strings[i]);
                 list.add(strings[i +1]);

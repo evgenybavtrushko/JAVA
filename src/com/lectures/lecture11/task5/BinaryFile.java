@@ -18,15 +18,15 @@ public class BinaryFile {
         }
         try (DataInputStream dis = new DataInputStream(new FileInputStream("text2.bin"))) {
             for (int i = 0; i < 20; i++) {
-                System.out.println(y = dis.readInt());
+                System.out.print((y = dis.readInt()) + " ");
                 x += y;
             }
 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        System.out.println(x);
-        System.out.println(x / 20);
+        System.out.println("\n" + x);
+        System.out.println((double) x / 20);
 
     }
 }
