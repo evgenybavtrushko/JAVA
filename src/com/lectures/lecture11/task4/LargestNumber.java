@@ -13,9 +13,9 @@ import java.util.List;
 public class LargestNumber {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        StringBuilder str = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         String s;
-        String y = "";
+        String y;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("number"))) {
             while ((s = bufferedReader.readLine()) != null) {
                 list.add("\n" + s);
@@ -27,19 +27,17 @@ public class LargestNumber {
         while (iterator.hasNext()) {
             y = "";
             s = iterator.next().toString();
-            str.delete(0, str.length());
             for (int i = 0; i < s.length(); i++) {
-                char x = 0;
+                char x;
+                stringBuilder.delete(0, stringBuilder.length());
                 if (Character.isDigit(x = s.charAt(i))) {
-                    x = 0;
-                    str.delete(0, str.length());
                     while (Character.isDigit(x = s.charAt(i))) {
-                        str.append(x);
+                        stringBuilder.append(x);
                         i++;
                     }
                 }
-                if (str.length() > y.length()) {
-                    y = str.toString();
+                if (stringBuilder.length() > y.length()) {
+                    y = stringBuilder.toString();
                 }
             }
             System.out.println(y);
