@@ -8,7 +8,7 @@ import java.util.List;
  * Created by User on 011 11.07.17.
  */
 public class Vowels {
-    public static void main(String[] args) {
+    public static void main() {
         File file = new File("Text");
         String line;
         StringBuilder stringBuilder = new StringBuilder();

@@ -6,7 +6,7 @@ import java.io.*;
  * Created by User on 011 11.07.17.
  */
 public class Text {
-    public static void main(String[] args) {
+    public static void main() {
         File file = new File("Text");
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {

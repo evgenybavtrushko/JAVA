@@ -8,7 +8,7 @@ import java.util.List;
  * Created by nimf8 on 7/13/2017.
  */
 public class LastFirst {
-    public static void main(String[] args) {
+    public static void main() {
         File file = new File("Text");
         String line;
         StringBuilder stringBuilder = new StringBuilder();

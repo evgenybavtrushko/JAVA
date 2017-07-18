@@ -9,7 +9,7 @@ import java.util.List;
  * Created by nimf8 on 7/13/2017.
  */
 public class JavaCode {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main() {
         List list = new ArrayList();
         List list2 = new ArrayList();
         String s;

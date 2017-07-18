@@ -6,9 +6,9 @@ import java.io.*;
  * Created by nimf8 on 7/13/2017.
  */
 public class BinaryFile {
-    public static void main(String[] args) {
+    public static void main() {
         int x = 0;
-        int y = 0;
+        int y;
         try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("text2.bin"))) {
             for (int i = 0; i < 20; i++) {
                 dos.writeInt((int) (Math.random() * 10));

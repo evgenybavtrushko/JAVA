@@ -11,7 +11,7 @@ import java.util.List;
  * Created by nimf8 on 7/14/2017.
  */
 public class LargestNumber {
-    public static void main(String[] args) {
+    public static void main() {
         List<String> list = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
         String s;
@@ -30,7 +30,7 @@ public class LargestNumber {
             for (int i = 0; i < s.length(); i++) {
                 char x;
                 stringBuilder.delete(0, stringBuilder.length());
-                if (Character.isDigit(x = s.charAt(i))) {
+                if (Character.isDigit(s.charAt(i))) {
                     while (Character.isDigit(x = s.charAt(i))) {
                         stringBuilder.append(x);
                         i++;
