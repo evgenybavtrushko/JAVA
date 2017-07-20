@@ -6,7 +6,7 @@ import java.io.*;
  * Created by nimf8 on 7/18/2017.
  */
 public class NotebookSerializable {
-    public static void main(String[] args) {
+    public static void main() {
         Touchpad touchpad = new Touchpad(21, 44);
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notebook.dat"))) {
             oos.writeObject(new Notebook(700, "ideapad", "Windows", 15.6, 2.3, touchpad));

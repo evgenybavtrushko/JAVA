@@ -7,7 +7,7 @@ import java.io.*;
  */
 
 public class ComputerSerializable {
-    public static void main(String[] args) {
+    public static void main() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("computer.dat"))) {
             oos.writeObject(new Computer(700, "ideapad", "Windows"));
         } catch (IOException ex) {

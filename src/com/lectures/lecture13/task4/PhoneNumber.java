@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Created by nimf8 on 7/18/2017.
  */
 public class PhoneNumber {
-    public static void main(String[] args) {
+    public static void main() {
         String text = "Вымирают +375292689084 целые  r+375448654320 из-за вырубки 375338654320 лесов, многие " +
                 "водные +375378654320 млекопитающие и рыбы +375254563425 давно находятся +375254533425e";
         StringBuilder str = new StringBuilder(text);

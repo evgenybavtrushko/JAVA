@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Created by nimf8 on 7/18/2017.
  */
-public class Address { public static void main(String[] args) {
+public class Address { public static void main() {
     String address = "0.168.255.100";
     Pattern pattern = Pattern.compile("\\b((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\b");
     Matcher matcher = pattern.matcher(address);
