@@ -12,5 +12,5 @@ public enum Details {
     RIGHT_LEG,
     CPU,
     RAM,
-    HDD;
+    HDD
 }
