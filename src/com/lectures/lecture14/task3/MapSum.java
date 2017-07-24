@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by nimf8 on 7/19/2017.
  */
 public class MapSum {
-    public static void main(String[] args) {
+    public static void main() {
         Map<String, Integer> map = new HashMap<>();
         map.put("Телефон", 500);
         map.put("Ноутбук", 600);

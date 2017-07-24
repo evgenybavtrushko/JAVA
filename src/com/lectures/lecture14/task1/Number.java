@@ -8,7 +8,7 @@ import java.util.OptionalDouble;
  * Created by nimf8 on 7/19/2017.
  */
 public class Number {
-    public static void main(String[] args) {
+    public static void main() {
         List<Integer> numbers = Arrays.asList(5, 6, 7, 3, 15, 10, 15, 3, 7, 20);
         double sr =
                 numbers
@@ -18,5 +18,6 @@ public class Number {
                         .average()
                         .orElse(0.0);
         System.out.printf("%.2f" ,sr);
+        System.out.println();
     }
 }

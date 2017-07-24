@@ -8,7 +8,7 @@ import java.util.function.BinaryOperator;
  * Created by nimf8 on 7/20/2017.
  */
 public class Concat {
-    public static void main(String[] args) {
+    public static void main() {
         List<Integer> list = Arrays.asList(1, 4, 0, 6, 3, 8, 6, 3, 6);
         String str = list
                 .stream()

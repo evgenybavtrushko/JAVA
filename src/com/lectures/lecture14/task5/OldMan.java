@@ -10,7 +10,7 @@ import lombok.*;
  */
 @AllArgsConstructor
 public class OldMan {
-    public static void main(String[] args) {
+    public static void main() {
         List<Person> personList = Arrays.asList(
                 new Person("Bob", "Black", 18),
                 new Person("Adolf", "Schicklgruber", 40),

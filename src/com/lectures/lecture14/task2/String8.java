@@ -7,7 +7,7 @@ import java.util.List;
  * Created by nimf8 on 7/19/2017.
  */
 public class String8 {
-    public static void main(String[] args) {
+    public static void main() {
         List<String> strings = Arrays.asList("Экология Земли", "Экология", "Экология Земли", "Земли", "автомобиль", "Экология Земли",
                 "автомобиль", "летит самолет");
         int x =

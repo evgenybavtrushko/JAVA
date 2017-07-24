@@ -18,13 +18,7 @@ public class Dump {
     }
 
     public Details pickUpInTheDump() {
-        int x = (int) ((Math.random() * 4) + 1);
-        for (int i = 0; i < x; i++) {
-            if (!(this.details.empty())) {
-                return this.details.pop();
-            }
-        }
-        return null;
+        return this.details.pop();
     }
 
     public Dump() {

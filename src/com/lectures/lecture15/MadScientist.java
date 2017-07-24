@@ -14,15 +14,24 @@ public class MadScientist extends Thread {
     public void run() {
         System.out.println("Старт потока УЧЕНЫЙ");
         for (int i = 0; i <= 100; i++) {
-            list.add(Test.dump.pickUpInTheDump());
-            try {
-                sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if(Test.dump.dumpIsEmpty()){
+                System.out.println("Свалка пуста");
+            }else {
+                int x = (int) ((Math.random() * 4) + 1);
+                for (int j = 0; j <x; j++) {
+                    if (!(Test.dump.dumpIsEmpty())) {
+                        list.add(Test.dump.pickUpInTheDump());
+                    }
+                }
             }
             if (list.containsAll(robot)) {
                 list.removeAll(robot);
                 count++;
+            }
+            try {
+                sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         System.out.println("Финишь потока УЧЕНЫЙ");
