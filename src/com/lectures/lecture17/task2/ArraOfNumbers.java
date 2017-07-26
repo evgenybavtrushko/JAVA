@@ -32,10 +32,10 @@ public class ArraOfNumbers {
                 }
                 service.shutdown();
                 long finishTen = System.currentTimeMillis();
-                System.out.println("" + (finishTen - startTen) + " " + maxi + " " + 10);
+                System.out.println("" + (finishTen - startTen) + " " + maxi + " " + Thread.currentThread().getName());
             }
         });
-        System.out.println(" " + (finishOne - startOne) + " " + max + " " + 1);
+        System.out.println(" " + (finishOne - startOne) + " " + max + " " + Thread.currentThread().getName());
     }
 
 }
