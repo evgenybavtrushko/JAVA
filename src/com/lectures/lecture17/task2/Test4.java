@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 
 public class Test4 {
     static int[] x = new int[100000000];
-    static int i = 0;
+    static int i = 5;
     static int max = 0;
     static List maximum = new ArrayList();
 
@@ -21,19 +21,26 @@ public class Test4 {
         for (i = 0; i < 100000000; i += 10000000) {
             service.submit(t);
             maximum.add(task.get());
+
         }
         service.shutdown();
 
-        System.out.println(maximum.stream().reduce((s1, s2) -> s1.equals(s2) ? s1 : s2).orElse(0));
+           System.out.println(maximum.stream().reduce((s1, s2) -> s1.equals(s2) ? s1 : s2).orElse(0));
+ //       for (int s = 0; s < maximum.size(); s++) {
+   //         if ((int)maximum.get(s) > max) {
+     //           max = (int)maximum.get(s);
+      //      }
+    //        System.out.println(maximum.get(s));
+     //   }
+    //    System.out.println(max);
         long finishTen = System.currentTimeMillis();
         System.out.println("" + (finishTen - startTen) + " " + (Thread.currentThread().getName()));
-
     }
 
     static Callable<Integer> callable = new Callable<Integer>() {
         @Override
         public Integer call() {
-            int maxi = 3;
+            int maxi = 0;
             for (int j = i; j < i + 10000000; j++) {
                 if (x[j] > maxi) {
                     maxi = x[j];
