@@ -1,0 +1,84 @@
+CREATE DATABASE books;
+USE books;
+CREATE TABLE authors (
+  author_id   INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_author CHARACTER(20)                  NOT NULL,
+  last_name   CHARACTER(20)                  NOT NULL,
+  country     CHARACTER(20)
+);
+
+CREATE TABLE books (
+  book_id             INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_book           VARCHAR(20)                    NOT NULL,
+  genre               VARCHAR(15)                    NOT NULL,
+  year_of_publication INT(4)                         NOT NULL,
+  author_id           INT,
+  CONSTRAINT FOREIGN KEY (author_id) REFERENCES authors (author_id)
+);
+
+INSERT authors (name_author, last_name, country)
+VALUES ('Лев', 'Толстой', 'Россия');
+INSERT authors (name_author, last_name, country)
+VALUES ('Антон', 'Чехов', 'Россия');
+INSERT authors (name_author, last_name, country)
+VALUES ('Генрман', 'Мелвилл', 'США');
+INSERT authors (name_author, last_name, country)
+VALUES ('Джек', 'Лондон', 'США');
+INSERT authors (name_author, last_name, country)
+VALUES ('Василий', 'Быков', 'Беларусь');
+INSERT authors (name_author, last_name, country)
+VALUES ('Якуб', 'Колос', 'Беларусь');
+
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Война и мир', 'Роман', 1869, 1);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Анна Каренина', 'Роман', 1873, 1);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Новая зямля', 'Поэма', 1923, 6);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('У пушчах Палесся', 'Пьесса', 1938, 6);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Морской волк', 'Роман', 1904, 4);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Дя́дя Ва́ня', 'Пьесса', 1896, 2);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Моби дик', 'Роман', 1851, 3);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Журавлиный крик', 'Повесть', 1959, 5);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Вишнёвый сад', 'Пьесса', 1903, 2);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Волчья яма', 'Роман', 1968, 5);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Белый клык', 'Роман', 1909, 4);
+INSERT books (name_book, genre, year_of_publication, author_id)
+VALUES ('Сын Волка', 'Рассказ', 1900, 4);
+
+SELECT *
+FROM books;
+
+SELECT *
+FROM authors;
+
+
+SELECT
+  name_book,
+  name_author,
+  last_name
+FROM books, authors
+WHERE authors.author_id = books.author_id
+ORDER BY year_of_publication;
+
+
+SELECT
+  name_book,
+  name_author,
+  last_name
+FROM books, authors
+WHERE authors.author_id = books.author_id
+ORDER BY year_of_publication DESC;
+
+SELECT COUNT(*)
+FROM books, authors
+WHERE authors.author_id = books.author_id AND last_name = 'Лондон';
+

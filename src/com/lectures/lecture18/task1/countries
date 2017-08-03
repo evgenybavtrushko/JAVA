@@ -1,0 +1,58 @@
+CREATE DATABASE countries;
+USE countries;
+CREATE TABLE countries_list (
+  country_id   INT(3) PRIMARY KEY AUTO_INCREMENT,
+  country_name CHARACTER(20) NOT NULL,
+  population   INT(10)       NOT NULL,
+  area         DECIMAL       NOT NULL,
+  language     CHARACTER(20) NOT NULL
+);
+
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Belarus', '9500000', '207600', 'belorussian');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Russia', '144300000', '17100000', 'russian');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('USA', '325000000', '9500000', 'english');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Germany', '82000000', '357021', 'dutch');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('India', '1329356004', '3287263', 'hindi');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Poland', '38623221', '312679', 'polish');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Ukraine', '48240902', '603628', 'ukrainian');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Lithuania', '2821674', '65300', 'lithuanian');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('France', '66991000', '643801', 'french');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Italy', '60000000', '301338 ', 'italian');
+INSERT INTO countries_list (country_name, population, area, language)
+VALUES ('Czech', '10553948', '78866  ', 'czech');
+
+SELECT *
+FROM countries_list;
+
+SELECT *
+FROM countries_list
+WHERE population > 50000000;
+
+SELECT *
+FROM countries_list
+ORDER BY population;
+
+SELECT SUM(population)
+FROM (
+       SELECT *
+       FROM countries_list
+       ORDER BY area
+       LIMIT 5) sum;
+
+UPDATE countries_list
+SET language = 'english'
+WHERE country_id = 3;
+
+DELETE FROM countries_list
+ORDER BY population DESC
+LIMIT 1;

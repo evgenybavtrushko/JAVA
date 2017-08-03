@@ -25,14 +25,14 @@ public class Test4 {
         }
         service.shutdown();
 
-           System.out.println(maximum.stream().reduce((s1, s2) -> s1.equals(s2) ? s1 : s2).orElse(0));
- //       for (int s = 0; s < maximum.size(); s++) {
-   //         if ((int)maximum.get(s) > max) {
-     //           max = (int)maximum.get(s);
-      //      }
-    //        System.out.println(maximum.get(s));
-     //   }
-    //    System.out.println(max);
+   //        System.out.println(maximum.stream().reduce((s1, s2) -> s1.equals(s2) ? s1 : s2).orElse(0));
+        for (int s = 0; s < maximum.size(); s++) {
+            if ((int)maximum.get(s) > max) {
+                max = (int)maximum.get(s);
+            }
+            System.out.println(maximum.get(s));
+        }
+        System.out.println(max);
         long finishTen = System.currentTimeMillis();
         System.out.println("" + (finishTen - startTen) + " " + (Thread.currentThread().getName()));
     }

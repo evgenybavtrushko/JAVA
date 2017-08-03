@@ -1,0 +1,182 @@
+CREATE DATABASE authors;
+USE authors;
+
+CREATE TABLE books (
+  book_id         INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_book       VARCHAR(20)                    NOT NULL,
+  number_of_pages INT(6)                         NOT NULL,
+  genre           VARCHAR(15)                    NOT NULL
+);
+
+CREATE TABLE authors (
+  author_id     INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_author   CHARACTER(20)                  NOT NULL,
+  last_name     CHARACTER(20)                  NOT NULL,
+  date_of_birth INT(4)                         NOT NULL,
+  nationality   CHARACTER(20)                  NOT NULL
+);
+
+CREATE TABLE books_authors (
+  book_id   INT,
+  author_id INT,
+  CONSTRAINT FOREIGN KEY (author_id) REFERENCES authors (author_id),
+  CONSTRAINT FOREIGN KEY (book_id) REFERENCES books (book_id)
+);
+ALTER TABLE books_authors
+  DROP FOREIGN KEY books_authors_ibfk_2;
+ALTER TABLE books_authors
+  ADD CONSTRAINT FOREIGN KEY (book_id) REFERENCES books (book_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE;
+
+
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Лев', 'Толстой', 1850, 'Россия');
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Антон', 'Чехов', 1769, 'Россия');
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Генрман', 'Мелвилл', 1823, 'США');
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Джек', 'Лондон', 1901, 'США');
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Василий', 'Быков', 1925, 'Беларусь');
+INSERT authors (name_author, last_name, date_of_birth, nationality)
+VALUES ('Якуб', 'Колос', 1896, 'Беларусь');
+
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Война и мир', 1560, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Анна Каренина', 1200, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Новая зямля', 956, 'Поэма');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('У пушчах Палесся', 600, 'Пьесса');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Морской волк', 842, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Дя́дя Ва́ня', 120, 'Пьесса');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Моби дик', 653, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Журавлиный крик', 265, 'Повесть');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Вишнёвый сад', 356, 'Пьесса');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Волчья яма', 856, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Белый клык', 600, 'Роман');
+INSERT books (name_book, number_of_pages, genre)
+VALUES ('Сын Волка', 148, 'Рассказ');
+
+INSERT books_authors (book_id, author_id)
+VALUES (1, 1);
+INSERT books_authors (book_id, author_id)
+VALUES (1, 2);
+INSERT books_authors (book_id, author_id)
+VALUES (1, 6);
+INSERT books_authors (book_id, author_id)
+VALUES (2, 1);
+INSERT books_authors (book_id, author_id)
+VALUES (3, 6);
+INSERT books_authors (book_id, author_id)
+VALUES (3, 5);
+INSERT books_authors (book_id, author_id)
+VALUES (4, 4);
+INSERT books_authors (book_id, author_id)
+VALUES (5, 2);
+INSERT books_authors (book_id, author_id)
+VALUES (6, 3);
+INSERT books_authors (book_id, author_id)
+VALUES (7, 5);
+INSERT books_authors (book_id, author_id)
+VALUES (8, 2);
+INSERT books_authors (book_id, author_id)
+VALUES (9, 6);
+INSERT books_authors (book_id, author_id)
+VALUES (10, 4);
+INSERT books_authors (book_id, author_id)
+VALUES (11, 3);
+INSERT books_authors (book_id, author_id)
+VALUES (12, 3);
+
+
+SELECT
+  a.last_name AS book_author,
+  b.name_book AS book_name
+FROM books b
+  JOIN books_authors b_a ON b.book_id = b_a.book_id
+  JOIN authors a ON b_a.author_id = a.author_id;
+
+SELECT DISTINCT b.name_book
+FROM books b
+  JOIN books_authors b_a ON b.book_id = b_a.book_id
+  JOIN authors a ON b_a.author_id = a.author_id
+WHERE nationality = 'Россия';
+#GROUP BY b.name_book;
+
+SELECT b.name_book
+FROM books b
+  JOIN books_authors b_a ON b.book_id = b_a.book_id
+  JOIN authors a ON b_a.author_id = a.author_id
+WHERE date_of_birth > 1900
+GROUP BY b.book_id;
+
+DELETE books, books_authors FROM books, books_authors
+WHERE name_book = 'Война и мир'
+      AND books.book_id = books_authors.book_id;
+
+SELECT
+  a.last_name,
+  a.nationality,
+  AVG(number_of_pages)
+# AVG((SELECT number_of_pages / COUNT(authors.author_id)
+#     FROM authors
+#       JOIN books_authors ON authors.author_id = books_authors.author_id
+#        JOIN books ON books_authors.book_id = books.book_id
+#      GROUP BY books.book_id))
+FROM authors a
+  JOIN books_authors b_a ON a.author_id = b_a.author_id
+  JOIN books b ON b_a.book_id = b.book_id
+GROUP BY a.author_id
+ORDER BY date_of_birth;
+
+
+SELECT
+  a.last_name,
+  a.nationality,
+  AVG(number_of_pages)
+# AVG((SELECT number_of_pages / COUNT(authors.author_id)
+#     FROM authors
+#       JOIN books_authors ON authors.author_id = books_authors.author_id
+#        JOIN books ON books_authors.book_id = books.book_id
+#      GROUP BY books.book_id))
+FROM authors a
+  JOIN books_authors b_a ON a.author_id = b_a.author_id
+  JOIN books b ON b_a.book_id = b.book_id
+GROUP BY a.author_id
+HAVING AVG(number_of_pages) > 300;
+
+SELECT
+  a.last_name,
+  (AVG(number_of_pages) / (SELECT count(*)
+                           FROM books_authors
+                           WHERE b.book_id = book_id)) AS r
+
+FROM authors a
+  JOIN books_authors b_a ON a.author_id = b_a.author_id
+  JOIN books b ON b_a.book_id = b.book_id
+GROUP BY a.last_name
+HAVING AVG(number_of_pages) > 300;
+
+
+SELECT
+  authors.last_name,
+  avg(books.number_of_pages)
+FROM authors
+  JOIN books_authors ON authors.author_id = books_authors.author_id
+  JOIN books ON books_authors.book_id = books.book_id
+GROUP BY authors.author_id
+HAVING avg(books.number_of_pages) > (SELECT avg(books.number_of_pages)
+                                     FROM authors
+                                       JOIN books_authors ON authors.author_id = books_authors.author_id
+                                       JOIN books ON books_authors.book_id = books.book_id)
