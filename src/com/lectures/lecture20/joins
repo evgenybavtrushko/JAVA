@@ -1,6 +1,11 @@
 CREATE DATABASE authors;
 USE authors;
 
+USE car_rental;
+ALTER TABLE car
+  ADD CONSTRAINT FOREIGN KEY (color_id) REFERENCES color (color_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
 CREATE TABLE books (
   book_id         INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   name_book       VARCHAR(20)                    NOT NULL,
